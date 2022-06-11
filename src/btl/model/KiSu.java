@@ -8,66 +8,22 @@ package btl.model;
  *
  * @author adli789987
  */
-public class KiSu {
-    private int MaKS;
-     private String HoTen;
-    private int NamSinh;
-    private String GioiTinh;
-    private String DiaChi;
+public class KiSu extends CanBo{
     private String LoaiBang;
     private String NganhDT;
-
+    
     public KiSu() {
+        
     }
-
-    public KiSu(int MaKS, String HoTen, int NamSinh, String GioiTinh, String DiaChi, String LoaiBang, String NganhDT) {
-        this.MaKS = MaKS;
-        this.HoTen = HoTen;
-        this.NamSinh = NamSinh;
-        this.GioiTinh = GioiTinh;
-        this.DiaChi = DiaChi;
+    public KiSu(String LoaiBang, String NganhDT) {
         this.LoaiBang = LoaiBang;
         this.NganhDT = NganhDT;
     }
 
-    public int getMaKS() {
-        return MaKS;
-    }
-
-    public void setMaKS(int MaKS) {
-        this.MaKS = MaKS;
-    }
-
-    public String getHoTen() {
-        return HoTen;
-    }
-
-    public void setHoTen(String HoTen) {
-        this.HoTen = HoTen;
-    }
-
-    public int getNamSinh() {
-        return NamSinh;
-    }
-
-    public void setNamSinh(int NamSinh) {
-        this.NamSinh = NamSinh;
-    }
-
-    public String getGioiTinh() {
-        return GioiTinh;
-    }
-
-    public void setGioiTinh(String GioiTinh) {
-        this.GioiTinh = GioiTinh;
-    }
-
-    public String getDiaChi() {
-        return DiaChi;
-    }
-
-    public void setDiaChi(String DiaChi) {
-        this.DiaChi = DiaChi;
+    public KiSu(String LoaiBang, String NganhDT, int Ma, String HoTen, int NamSinh, String GioiTinh, String DiaChi) {
+        super(Ma, HoTen, NamSinh, GioiTinh, DiaChi);
+        this.LoaiBang = LoaiBang;
+        this.NganhDT = NganhDT;
     }
 
     public String getLoaiBang() {
@@ -85,7 +41,6 @@ public class KiSu {
     public void setNganhDT(String NganhDT) {
         this.NganhDT = NganhDT;
     }
-    
-    
+
     
 }

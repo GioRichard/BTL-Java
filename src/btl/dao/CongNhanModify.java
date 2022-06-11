@@ -45,12 +45,13 @@ public class CongNhanModify {
 
             while (resultSet.next()) {
                 CongNhan std;
-                std = new CongNhan(resultSet.getInt("MaCongNhan"),
+                std = new CongNhan( resultSet.getInt("Bac"),
+                        resultSet.getInt("MaCongNhan"),
                         resultSet.getString("HoTen"),
                         resultSet.getInt("NamSinh"),
                         resultSet.getString("GioiTinh"),
-                        resultSet.getString("DiaChi"),
-                        resultSet.getInt("Bac"));
+                        resultSet.getString("DiaChi")
+                       );
                 CongNhanList.add(std);
             }
 
@@ -93,7 +94,7 @@ public class CongNhanModify {
             
             String sql = "insert into congnhan(MaCongNhan,HoTen,NamSinh,GioiTinh,DiaChi,Bac) value (?,?,?,?,?,?)";
             statement = conn.prepareCall(sql);
-            statement.setInt(1, std.getMaCN());
+            statement.setInt(1, std.getMa());
             statement.setString(2, std.getHoTen());
             statement.setInt(3, std.getNamSinh());
             statement.setString(4,std.getGioiTinh());
@@ -145,7 +146,7 @@ public class CongNhanModify {
             statement.setString(3, std.getGioiTinh());
             statement.setString(4,std.getDiaChi());
             statement.setInt(5, std.getBac());
-            statement.setInt(6, std.getMaCN());
+            statement.setInt(6, std.getMa());
 
             //them du leu vao database
              statement.execute();
@@ -234,12 +235,13 @@ public class CongNhanModify {
 
             while (resultSet.next()) {
                 CongNhan std;
-                std = new CongNhan(resultSet.getInt("MaCongNhan"),
+                std = new CongNhan(resultSet.getInt("Bac"),
+                        resultSet.getInt("MaCongNhan"),
                         resultSet.getString("HoTen"),
                         resultSet.getInt("NamSinh"),
                         resultSet.getString("GioiTinh"),
-                        resultSet.getString("DiaChi"),
-                        resultSet.getInt("Bac"));
+                        resultSet.getString("DiaChi")
+                        );
                 CongNhanList.add(std);
             }
 

@@ -46,12 +46,13 @@ public class NhanVienModify {
 
             while (resultSet.next()) {
                 NhanVien std;
-                std = new NhanVien(resultSet.getInt("MaNhanVien"),
+                std = new NhanVien(resultSet.getString("CongViec"),
+                        resultSet.getInt("MaNhanVien"),
                         resultSet.getString("HoTen"),
                         resultSet.getInt("NamSinh"),
                         resultSet.getString("GioiTinh"),
-                        resultSet.getString("DiaChi"),
-                        resultSet.getString("CongViec"));
+                        resultSet.getString("DiaChi")
+                        );
                 NhanVienList.add(std);
             }
 
@@ -94,7 +95,7 @@ public class NhanVienModify {
             
             String sql = "insert into nhanvien(MaNhanVien,HoTen,NamSinh,GioiTinh,DiaChi,CongViec) value (?,?,?,?,?,?)";
             statement = conn.prepareCall(sql);
-            statement.setInt(1, std.getMaNV());
+            statement.setInt(1, std.getMa());
             statement.setString(2, std.getHoTen());
             statement.setInt(3, std.getNamSinh());
             statement.setString(4,std.getGioiTinh());
@@ -146,7 +147,7 @@ public class NhanVienModify {
             statement.setString(3, std.getGioiTinh());
             statement.setString(4,std.getDiaChi());
             statement.setString(5, std.getCongViec());
-            statement.setInt(6, std.getMaNV());
+            statement.setInt(6, std.getMa());
 
             //them du leu vao database
              statement.execute();
@@ -235,12 +236,13 @@ public class NhanVienModify {
 
             while (resultSet.next()) {
                 NhanVien std;
-                std = new NhanVien(resultSet.getInt("MaNhanVien"),
+                std = new NhanVien(resultSet.getString("CongViec"),
+                        resultSet.getInt("MaNhanVien"),
                         resultSet.getString("HoTen"),
                         resultSet.getInt("NamSinh"),
                         resultSet.getString("GioiTinh"),
-                        resultSet.getString("DiaChi"),
-                        resultSet.getString("CongViec"));
+                        resultSet.getString("DiaChi")
+                        );
                 nhanVienList.add(std);
             }
 

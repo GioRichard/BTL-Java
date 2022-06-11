@@ -37,7 +37,7 @@ public class CongNhanForm extends javax.swing.JFrame {
 
         for (CongNhan congnhan : CongNhanList) {
             tableModel.addRow(new Object[]{
-                congnhan.getMaCN(),
+                congnhan.getMa(),
                 congnhan.getHoTen(),
                 congnhan.getNamSinh(),
                 congnhan.getGioiTinh(),
@@ -391,7 +391,7 @@ public class CongNhanForm extends javax.swing.JFrame {
         int bac = Integer.parseInt(txtBac.getText());
         
         
-        CongNhan cn = new CongNhan(macn, hoten, namsinh, gioitinh, diachi,bac);
+        CongNhan cn = new CongNhan(bac,macn, hoten, namsinh, gioitinh, diachi);
         CongNhanModify.insert(cn);
         showcn();
         JOptionPane.showMessageDialog(this, "Thêm thành công!");
@@ -408,7 +408,7 @@ public class CongNhanForm extends javax.swing.JFrame {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         CongNhan cn = new CongNhan();
-        cn.setMaCN(Integer.parseInt(txtMa.getText()));
+        cn.setMa(Integer.parseInt(txtMa.getText()));
         cn.setHoTen(txtTen.getText());
         cn.setNamSinh(Integer.parseInt(txtNamSinh.getText()));
         cn.setDiaChi(txtDiaChi.getText());
@@ -430,7 +430,7 @@ public class CongNhanForm extends javax.swing.JFrame {
 
 
             if (option == 0) {
-                CongNhanModify.delete(cb.getMaCN());
+                CongNhanModify.delete(cb.getMa());
                 showcn();
             }
         }
@@ -439,6 +439,7 @@ public class CongNhanForm extends javax.swing.JFrame {
     private void tblListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblListMouseClicked
         int myIndex = tblList.getSelectedRow();
         txtMa.setText(tableModel.getValueAt(myIndex, 0).toString());
+        txtMa.setEnabled(false);
         txtTen.setText(tableModel.getValueAt(myIndex, 1).toString());
         txtNamSinh.setText(tableModel.getValueAt(myIndex, 2).toString());
         txtGioiTinh.setText(tableModel.getValueAt(myIndex, 3).toString());
@@ -456,7 +457,7 @@ public class CongNhanForm extends javax.swing.JFrame {
 
             for (CongNhan congnhan : CongNhanList) {
                 tableModel.addRow(new Object[]{
-                    congnhan.getMaCN(),
+                    congnhan.getMa(),
                     congnhan.getHoTen(),
                     congnhan.getNamSinh(),
                     congnhan.getGioiTinh(),

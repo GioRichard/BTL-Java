@@ -9,7 +9,7 @@ package btl.model;
  * @author adli789987
  */
 public class CanBo {
-    private int MaCB;
+    private int Ma;
     private String HoTen;
     private int NamSinh;
     private String GioiTinh;
@@ -18,20 +18,20 @@ public class CanBo {
     public CanBo() {
     }
 
-    public CanBo(int MaCB, String HoTen, int NamSinh, String GioiTinh, String DiaChi) {
-        this.MaCB = MaCB;
+    public CanBo(int Ma, String HoTen, int NamSinh, String GioiTinh, String DiaChi) {
+        this.Ma = Ma;
         this.HoTen = HoTen;
         this.NamSinh = NamSinh;
         this.GioiTinh = GioiTinh;
         this.DiaChi = DiaChi;
     }
-    
-    public int getMaCB() {
-        return MaCB;
+
+    public int getMa() {
+        return Ma;
     }
 
-    public void setMaCB(int MaCB) {
-        this.MaCB = MaCB;
+    public void setMa(int Ma) {
+        this.Ma = Ma;
     }
 
     public String getHoTen() {
@@ -67,14 +67,5 @@ public class CanBo {
     }
 
     
-
-    
-    
-            
-    
-            
-            
-            
-          
     
 }

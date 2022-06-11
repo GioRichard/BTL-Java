@@ -8,71 +8,20 @@ package btl.model;
  *
  * @author adli789987
  */
-public class NhanVien {
-    private int MaNV;
-     private String HoTen;
-    private int NamSinh;
-    private String GioiTinh;
-    private String DiaChi;
+public class NhanVien extends CanBo{
     private String CongViec;
 
     public NhanVien() {
+       
     }
-
-    public NhanVien(int MaNV, String HoTen, int NamSinh, String GioiTinh, String DiaChi, String CongViec) {
-        this.MaNV = MaNV;
-        this.HoTen = HoTen;
-        this.NamSinh = NamSinh;
-        this.GioiTinh = GioiTinh;
-        this.DiaChi = DiaChi;
+    
+    public NhanVien(String CongViec) {
         this.CongViec = CongViec;
     }
- public NhanVien( String HoTen, int NamSinh, String GioiTinh, String DiaChi, String CongViec) {
-        
-        this.HoTen = HoTen;
-        this.NamSinh = NamSinh;
-        this.GioiTinh = GioiTinh;
-        this.DiaChi = DiaChi;
+
+    public NhanVien(String CongViec, int Ma, String HoTen, int NamSinh, String GioiTinh, String DiaChi) {
+        super(Ma, HoTen, NamSinh, GioiTinh, DiaChi);
         this.CongViec = CongViec;
-    }
-    public int getMaNV() {
-        return MaNV;
-    }
-
-    public void setMaNV(int MaNV) {
-        this.MaNV = MaNV;
-    }
-
-    public String getHoTen() {
-        return HoTen;
-    }
-
-    public void setHoTen(String HoTen) {
-        this.HoTen = HoTen;
-    }
-
-    public int getNamSinh() {
-        return NamSinh;
-    }
-
-    public void setNamSinh(int NamSinh) {
-        this.NamSinh = NamSinh;
-    }
-
-    public String getGioiTinh() {
-        return GioiTinh;
-    }
-
-    public void setGioiTinh(String GioiTinh) {
-        this.GioiTinh = GioiTinh;
-    }
-
-    public String getDiaChi() {
-        return DiaChi;
-    }
-
-    public void setDiaChi(String DiaChi) {
-        this.DiaChi = DiaChi;
     }
 
     public String getCongViec() {
@@ -82,7 +31,6 @@ public class NhanVien {
     public void setCongViec(String CongViec) {
         this.CongViec = CongViec;
     }
-    
     
     
 }

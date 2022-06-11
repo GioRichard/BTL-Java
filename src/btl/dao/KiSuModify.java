@@ -45,13 +45,15 @@ public class KiSuModify {
 
             while (resultSet.next()) {
                 KiSu std;
-                std = new KiSu(resultSet.getInt("MaKiSu"),
+                std = new KiSu(resultSet.getString("LoaiBang"),
+                        resultSet.getString("NganhDT"),
+                        resultSet.getInt("MaKiSu"),
                         resultSet.getString("HoTen"),
                         resultSet.getInt("NamSinh"),
                         resultSet.getString("GioiTinh"),
-                        resultSet.getString("DiaChi"),
-                        resultSet.getString("NganhDT"),
-                        resultSet.getString("LoaiBang"));
+                        resultSet.getString("DiaChi")
+                        
+                        );
                 KiSuList.add(std);
             }
 
@@ -94,7 +96,7 @@ public class KiSuModify {
             
             String sql = "insert into kisu(MaKiSu,HoTen,NamSinh,GioiTinh,DiaChi,LoaiBang,NganhDT) value (?,?,?,?,?,?,?)";
             statement = conn.prepareCall(sql);
-            statement.setInt(1, std.getMaKS());
+            statement.setInt(1, std.getMa());
             statement.setString(2, std.getHoTen());
             statement.setInt(3, std.getNamSinh());
             statement.setString(4,std.getGioiTinh());
@@ -148,7 +150,7 @@ public class KiSuModify {
             statement.setString(4,std.getDiaChi());
             statement.setString(5, std.getLoaiBang());
             statement.setString(6, std.getNganhDT());
-            statement.setInt(7, std.getMaKS());
+            statement.setInt(7, std.getMa());
 
             //them du leu vao database
              statement.execute();
@@ -237,13 +239,14 @@ public class KiSuModify {
 
             while (resultSet.next()) {
                 KiSu std;
-                std = new KiSu(resultSet.getInt("MaKiSu"),
+                std = new KiSu(resultSet.getString("LoaiBang"),
+                        resultSet.getString("NganhDT"),
+                        resultSet.getInt("MaKiSu"),
                         resultSet.getString("HoTen"),
                         resultSet.getInt("NamSinh"),
                         resultSet.getString("GioiTinh"),
-                        resultSet.getString("DiaChi"),
-                        resultSet.getString("NganhDT"),
-                        resultSet.getString("LoaiBang"));
+                        resultSet.getString("DiaChi")
+                        );
                 KiSuList.add(std);
             }
 

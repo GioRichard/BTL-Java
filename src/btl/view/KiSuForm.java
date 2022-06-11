@@ -37,7 +37,7 @@ public class KiSuForm extends javax.swing.JFrame {
 
         for (KiSu kisu : KiSuList) {
             tableModel.addRow(new Object[]{
-                kisu.getMaKS(),
+                kisu.getMa(),
                 kisu.getHoTen(),
                 kisu.getNamSinh(),
                 kisu.getGioiTinh(),
@@ -408,7 +408,7 @@ public class KiSuForm extends javax.swing.JFrame {
         String Nganhdt = txtNganh.getText();
         String loaibang = txtLoai.getText();
         
-        KiSu ks = new KiSu(maks, hoten, namsinh, gioitinh, diachi, loaibang,Nganhdt);
+        KiSu ks = new KiSu(loaibang,Nganhdt,maks, hoten, namsinh, gioitinh, diachi);
         KiSuModify.insert(ks);
         showKiSu();
         JOptionPane.showMessageDialog(this, "Thêm thành công!");
@@ -426,7 +426,7 @@ public class KiSuForm extends javax.swing.JFrame {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
        KiSu ks = new KiSu();
-        ks.setMaKS(Integer.parseInt(txtMa.getText()));
+        ks.setMa(Integer.parseInt(txtMa.getText()));
         ks.setHoTen(txtTen.getText());
         ks.setNamSinh(Integer.parseInt(txtNamSinh.getText()));
         ks.setDiaChi(txtDiaChi.getText());
@@ -448,7 +448,7 @@ public class KiSuForm extends javax.swing.JFrame {
 
 
             if (option == 0) {
-                KiSuModify.delete(cb.getMaKS());
+                KiSuModify.delete(cb.getMa());
                 showKiSu();
             }
         }
@@ -457,6 +457,7 @@ public class KiSuForm extends javax.swing.JFrame {
     private void tblListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblListMouseClicked
         int myIndex = tblList.getSelectedRow();
         txtMa.setText(tableModel.getValueAt(myIndex, 0).toString());
+        txtMa.setEnabled(false);
         txtTen.setText(tableModel.getValueAt(myIndex, 1).toString());
         txtNamSinh.setText(tableModel.getValueAt(myIndex, 2).toString());
         txtGioiTinh.setText(tableModel.getValueAt(myIndex, 3).toString());
@@ -475,7 +476,7 @@ public class KiSuForm extends javax.swing.JFrame {
 
             for (KiSu kisu : KiSuList) {
                 tableModel.addRow(new Object[]{
-                    kisu.getMaKS(),
+                    kisu.getMa(),
                     kisu.getHoTen(),
                     kisu.getNamSinh(),
                     kisu.getGioiTinh(),
