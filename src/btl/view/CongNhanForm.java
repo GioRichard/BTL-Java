@@ -90,9 +90,9 @@ public class CongNhanForm extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
-        jLabel1.setFont(new java.awt.Font("Century", 1, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("QUAN LY CONG NHAN");
+        jLabel1.setText("QUẢN LÝ CÔNG NHÂN");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -111,17 +111,17 @@ public class CongNhanForm extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setText("Ma CN");
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel3.setText("MÃ CN");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setText("HO TEN");
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel4.setText("HỌ TÊN");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel5.setText("BAC");
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel5.setText("BẬC");
 
         btnUpdate.setBackground(new java.awt.Color(153, 153, 153));
-        btnUpdate.setText("UPDATE");
+        btnUpdate.setText("SỬA");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
@@ -129,7 +129,7 @@ public class CongNhanForm extends javax.swing.JFrame {
         });
 
         btnDelete.setBackground(new java.awt.Color(153, 153, 153));
-        btnDelete.setText("DELETE");
+        btnDelete.setText("XÓA");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
@@ -137,7 +137,7 @@ public class CongNhanForm extends javax.swing.JFrame {
         });
 
         btnAdd.setBackground(new java.awt.Color(153, 153, 153));
-        btnAdd.setText("ADD");
+        btnAdd.setText("THÊM MỚI");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
@@ -145,20 +145,20 @@ public class CongNhanForm extends javax.swing.JFrame {
         });
 
         btnClear.setBackground(new java.awt.Color(153, 153, 153));
-        btnClear.setText("CLEAR");
+        btnClear.setText("LÀM MỚI");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClearActionPerformed(evt);
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Century", 1, 14)); // NOI18N
-        jLabel6.setText("THONG TIN CONG NHAN");
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel6.setText("THÔNG TIN CÔNG NHÂN");
 
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
 
-        jLabel7.setFont(new java.awt.Font("Century", 1, 14)); // NOI18N
-        jLabel7.setText("DANH SACH CONG NHAN");
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel7.setText("DANH SÁCH CÔNG NHÂN");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -182,7 +182,7 @@ public class CongNhanForm extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Ma Cong Nhan", "Ten Cong Nhan", "Nam Sinh", "Gioi TInh", "Dia Chi", "Bac"
+                "Mã Công Nhân", "Tên Công Nhân", "Năm sinh", "Giới tính", "Địa chỉ", "Bậc"
             }
         ) {
             Class[] types = new Class [] {
@@ -203,17 +203,17 @@ public class CongNhanForm extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblList);
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel8.setText("NAM SINH");
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel8.setText("NĂM SINH");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel9.setText("GIOI TINH");
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel9.setText("GIỚI TÍNH");
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel10.setText("DIA CHI");
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel10.setText("ĐỊA CHỈ");
 
         btnSeach.setBackground(new java.awt.Color(153, 153, 153));
-        btnSeach.setText("Search");
+        btnSeach.setText("TÌM KIẾM");
         btnSeach.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSeachActionPerformed(evt);
@@ -265,20 +265,20 @@ public class CongNhanForm extends javax.swing.JFrame {
                                     .addComponent(txtDiaChi, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtBac, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(103, 103, 103)
-                                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(79, 79, 79)
-                                .addComponent(btnUpdate)
+                                .addGap(88, 88, 88)
+                                .addComponent(btnAdd)
+                                .addGap(67, 67, 67)
+                                .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(31, 31, 31)
                                 .addComponent(btnDelete)
                                 .addGap(37, 37, 37)
-                                .addComponent(btnClear))
+                                .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(45, 45, 45)
                                 .addComponent(btnSeach)
                                 .addGap(33, 33, 33)
                                 .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 75, Short.MAX_VALUE)))
+                        .addGap(0, 72, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -343,7 +343,8 @@ public class CongNhanForm extends javax.swing.JFrame {
         );
 
         jButton5.setBackground(new java.awt.Color(153, 153, 153));
-        jButton5.setText("HOME");
+        jButton5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jButton5.setText("TRANG CHỦ");
         jButton5.setActionCommand("");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -372,7 +373,7 @@ public class CongNhanForm extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(jButton5)
                 .addGap(30, 30, 30)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -389,9 +390,8 @@ public class CongNhanForm extends javax.swing.JFrame {
         int namsinh = Integer.parseInt(txtNamSinh.getText());
         String diachi = txtDiaChi.getText();
         int bac = Integer.parseInt(txtBac.getText());
-        
-        
-        CongNhan cn = new CongNhan(bac,macn, hoten, namsinh, gioitinh, diachi);
+
+        CongNhan cn = new CongNhan(bac, macn, hoten, namsinh, gioitinh, diachi);
         CongNhanModify.insert(cn);
         showcn();
         JOptionPane.showMessageDialog(this, "Thêm thành công!");
@@ -414,7 +414,7 @@ public class CongNhanForm extends javax.swing.JFrame {
         cn.setDiaChi(txtDiaChi.getText());
         cn.setGioiTinh(txtGioiTinh.getText());
         cn.setBac(Integer.parseInt(txtBac.getText()));
-     
+
         CongNhanModify.update(cn);
         JOptionPane.showMessageDialog(null, "Cap nhat thanh cong!");
 
@@ -427,7 +427,6 @@ public class CongNhanForm extends javax.swing.JFrame {
             CongNhan cb = CongNhanList.get(seletedIndex);
 
             int option = JOptionPane.showConfirmDialog(this, "Ban chac chan muon xoa!!");
-
 
             if (option == 0) {
                 CongNhanModify.delete(cb.getMa());
@@ -449,7 +448,7 @@ public class CongNhanForm extends javax.swing.JFrame {
 
     private void btnSeachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeachActionPerformed
         String input = txtSearch.getText();
-        
+
         if (input != null && input.length() > 0) {
             CongNhanList = CongNhanModify.findByFullName(input);
 
@@ -466,14 +465,14 @@ public class CongNhanForm extends javax.swing.JFrame {
 
                 });
 
-    }                                       
-        }else{
+            }
+        } else {
             showcn();
         }
     }//GEN-LAST:event_btnSeachActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-       new HomeForm().setVisible(true);
+        new HomeForm().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 

@@ -23,23 +23,18 @@ import jdk.nashorn.api.tree.BreakTree;
  */
 public class ThongKeForm extends javax.swing.JFrame {
     DefaultTableModel tableModel;
-
     List<NhanVien> NhanVienList = new ArrayList<>();
     List<CongNhan> CongNhanList = new ArrayList<>();
     List<KiSu> KiSuList = new ArrayList<>();
     int selectedIndex = -1;
-    /**
-     * Creates new form NhanVien
-     */
+    
     public ThongKeForm() {
         initComponents();
-        
-        tableModel = (DefaultTableModel) nvlist.getModel();
-        
 
+        tableModel = (DefaultTableModel) nvlist.getModel();
     }
 
-  //sâu du lieu
+   
     private void showNhanVien() {
         NhanVienList = NhanVienModify.findAll();
         tableModel.setRowCount(0);
@@ -50,14 +45,13 @@ public class ThongKeForm extends javax.swing.JFrame {
                 nhanVien.getHoTen(),
                 nhanVien.getNamSinh(),
                 nhanVien.getGioiTinh(),
-                nhanVien.getDiaChi(),"","","",
+                nhanVien.getDiaChi(), "", "", "",
                 nhanVien.getCongViec()
-               
             });
         }
-
     }
-    //sâu du lieu
+
+    
     private void showcn() {
         CongNhanList = CongNhanModify.findAll();
         tableModel.setRowCount(0);
@@ -68,13 +62,13 @@ public class ThongKeForm extends javax.swing.JFrame {
                 congnhan.getHoTen(),
                 congnhan.getNamSinh(),
                 congnhan.getGioiTinh(),
-                congnhan.getDiaChi(),"","",
-                congnhan.getBac(),    
-            });
+                congnhan.getDiaChi(), "", "",
+                congnhan.getBac(),});
         }
 
     }
-    //sâu du lieu
+
+    
     private void showKiSu() {
         KiSuList = KiSuModify.findAll();
         tableModel.setRowCount(0);
@@ -88,11 +82,12 @@ public class ThongKeForm extends javax.swing.JFrame {
                 kisu.getDiaChi(),
                 kisu.getLoaiBang(),
                 kisu.getNganhDT()
-               
+
             });
         }
 
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -106,7 +101,6 @@ public class ThongKeForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnCongNhan = new javax.swing.JButton();
-        btnAll = new javax.swing.JButton();
         btnKiSu = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -121,9 +115,9 @@ public class ThongKeForm extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
-        jLabel1.setFont(new java.awt.Font("Century", 1, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("THONG KE CAN BO");
+        jLabel1.setText("THÔNG KÊ CÁN BỘ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -143,36 +137,30 @@ public class ThongKeForm extends javax.swing.JFrame {
         );
 
         btnCongNhan.setBackground(new java.awt.Color(153, 153, 153));
-        btnCongNhan.setText("CONG NHAN");
+        btnCongNhan.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        btnCongNhan.setText("CÔNG NHÂN");
         btnCongNhan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCongNhanActionPerformed(evt);
             }
         });
 
-        btnAll.setBackground(new java.awt.Color(153, 153, 153));
-        btnAll.setText("TAT CA");
-        btnAll.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAllActionPerformed(evt);
-            }
-        });
-
         btnKiSu.setBackground(new java.awt.Color(153, 153, 153));
-        btnKiSu.setText("KI SU");
+        btnKiSu.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        btnKiSu.setText("KĨ SƯ");
         btnKiSu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnKiSuActionPerformed(evt);
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Century", 1, 14)); // NOI18N
-        jLabel6.setText("THONG TIN CAN BO");
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel6.setText("THÔNG TIN CÁN BỘ");
 
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
 
-        jLabel7.setFont(new java.awt.Font("Century", 1, 14)); // NOI18N
-        jLabel7.setText("DANH SACH ");
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel7.setText("DANH SÁCH ");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -196,7 +184,7 @@ public class ThongKeForm extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Ma Can Bo", "Ten Can Bo", "Nam Sinh", "Gioi Tinh", "Dia Chi", "Nganh DT", "Loai Bang", "Bac", "Cong Viec"
+                "Mã Cán Bộ", "Tên Cán Bộ", "Năm sinh", "Giới tính", "Địa chỉ", "Ngành DT", "Loại bằng", "Bậc", "Công việc"
             }
         ) {
             Class[] types = new Class [] {
@@ -223,7 +211,8 @@ public class ThongKeForm extends javax.swing.JFrame {
         }
 
         jButton5.setBackground(new java.awt.Color(153, 153, 153));
-        jButton5.setText("HOME");
+        jButton5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jButton5.setText("TRANG CHỦ");
         jButton5.setActionCommand("");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,7 +234,8 @@ public class ThongKeForm extends javax.swing.JFrame {
         );
 
         btnNhanVien.setBackground(new java.awt.Color(153, 153, 153));
-        btnNhanVien.setText("NHAN VIEN");
+        btnNhanVien.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        btnNhanVien.setText("NHÂN VIÊN");
         btnNhanVien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNhanVienActionPerformed(evt);
@@ -264,26 +254,23 @@ public class ThongKeForm extends javax.swing.JFrame {
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jScrollPane1)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addComponent(btnKiSu, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(69, 69, 69)
-                                .addComponent(btnCongNhan)
-                                .addGap(68, 68, 68)
-                                .addComponent(btnNhanVien)
-                                .addGap(80, 80, 80)
-                                .addComponent(btnAll, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 68, Short.MAX_VALUE))
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 496, Short.MAX_VALUE))
                     .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(316, 316, 316)
+                .addGap(42, 42, 42)
+                .addComponent(btnKiSu, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCongNhan)
+                .addGap(139, 139, 139)
+                .addComponent(btnNhanVien)
+                .addGap(89, 89, 89))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(315, 315, 315))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -294,15 +281,14 @@ public class ThongKeForm extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnKiSu, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCongNhan, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnNhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAll, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnNhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(61, 61, 61)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addComponent(jButton5)
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -329,7 +315,7 @@ public class ThongKeForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnKiSuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKiSuActionPerformed
-       tableModel = (DefaultTableModel) nvlist.getModel();
+        tableModel = (DefaultTableModel) nvlist.getModel();
         showKiSu();
     }//GEN-LAST:event_btnKiSuActionPerformed
 
@@ -338,18 +324,8 @@ public class ThongKeForm extends javax.swing.JFrame {
         showcn();
     }//GEN-LAST:event_btnCongNhanActionPerformed
 
-    private void btnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAllActionPerformed
-      tableModel = (DefaultTableModel) nvlist.getModel();
-        showcn();
-        tableModel = (DefaultTableModel) nvlist.getModel();
-        showKiSu();
-        tableModel = (DefaultTableModel) nvlist.getModel();
-        showNhanVien();
-        
-    }//GEN-LAST:event_btnAllActionPerformed
-
     private void nvlistMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nvlistMouseClicked
-        
+
     }//GEN-LAST:event_nvlistMouseClicked
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -361,52 +337,11 @@ public class ThongKeForm extends javax.swing.JFrame {
         tableModel = (DefaultTableModel) nvlist.getModel();
         showNhanVien();
     }//GEN-LAST:event_btnNhanVienActionPerformed
-    
-    
-    
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ThongKeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ThongKeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ThongKeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ThongKeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ThongKeForm().setVisible(true);
@@ -415,7 +350,6 @@ public class ThongKeForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAll;
     private javax.swing.JButton btnCongNhan;
     private javax.swing.JButton btnKiSu;
     private javax.swing.JButton btnNhanVien;
