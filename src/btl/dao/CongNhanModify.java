@@ -92,14 +92,14 @@ public class CongNhanModify {
 
             //query
             
-            String sql = "insert into congnhan(MaCongNhan,HoTen,NamSinh,GioiTinh,DiaChi,Bac) value (?,?,?,?,?,?)";
+            String sql = "insert into congnhan(MaCongNhan,Bac,HoTen,GioiTinh,DiaChi,NamSinh) value (?,?,?,?,?,?)";
             statement = conn.prepareCall(sql);
             statement.setInt(1, std.getMa());
-            statement.setString(2, std.getHoTen());
-            statement.setInt(3, std.getNamSinh());
+            statement.setInt(2, std.getBac());
+            statement.setString(3, std.getHoTen());
             statement.setString(4,std.getGioiTinh());
             statement.setString(5, std.getDiaChi());
-            statement.setInt(6, std.getBac());
+            statement.setInt(6, std.getNamSinh());
             //them du leu vao database
             statement.execute();
 

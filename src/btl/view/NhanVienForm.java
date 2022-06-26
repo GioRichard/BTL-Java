@@ -32,7 +32,33 @@ public class NhanVienForm extends javax.swing.JFrame {
         showNhanVien();
     }
 
-    //sâu du lieu
+    public boolean ValiForm() {
+        if(Valication.isEmpty(txtMa, "Ma nhan vien khong duoc rong!")){
+            return false;                  
+        }
+        if(!Valication.isNumber(txtMa, "Ma nhan vien la kieu so!")){
+            return false;                  
+        }
+        if(Valication.isEmpty(nvhoten, "Ten nhan vien khong duoc rong!")){
+            return false;                  
+        }
+        if(Valication.isEmpty(nvdiachi, "Dia Chi khong duoc rong!")){
+            return false;                  
+        }
+        if(Valication.isEmpty(nvnamsinh, "Nam sinh khong duoc rong!")){
+            return false;                  
+        }if(!Valication.isNumber(nvnamsinh, "Nam sinh khong duoc rong!")){
+            return false;                  
+        }
+//        if(Valication.isEmpty(nvgioitinh, "Gioi tinh khong duoc rong!")){
+//            return false;                  
+//        }
+        if(Valication.isEmpty(nvcongviec, "Cong viec khong duoc rong!")){
+            return false;                  
+        }
+          return true; 
+    }
+    
     private void showNhanVien() {
         NhanVienList = NhanVienModify.findAll();
         tableModel.setRowCount(0);
@@ -76,7 +102,6 @@ public class NhanVienForm extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         nvnamsinh = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        nvgioitinh = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         nvdiachi = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -86,6 +111,7 @@ public class NhanVienForm extends javax.swing.JFrame {
         btnSearch = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         nvhoten = new javax.swing.JTextField();
+        nvgioitinh = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
 
         jTextField1.setText("jTextField1");
@@ -241,6 +267,8 @@ public class NhanVienForm extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel11.setText("HỌ TÊN");
 
+        nvgioitinh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nu" }));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -261,16 +289,10 @@ public class NhanVienForm extends javax.swing.JFrame {
                                 .addGap(42, 42, 42)
                                 .addComponent(nvdelete))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(305, 305, 305)
-                                .addComponent(jButton5))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
                                 .addComponent(btnSearch)
                                 .addGap(43, 43, 43)
-                                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 247, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(30, 30, 30)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -293,19 +315,23 @@ public class NhanVienForm extends javax.swing.JFrame {
                                         .addGap(25, 25, 25)
                                         .addComponent(nvcongviec, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(nvgioitinh, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel9)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                                .addGap(99, 99, 99)
-                                                .addComponent(nvdiachi, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(jLabel10)))
+                                        .addComponent(jLabel10)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel9)
+                                            .addGap(29, 29, 29)
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(nvdiachi, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                                                .addComponent(nvgioitinh, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                                     .addComponent(nvclear)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(39, 39, 39)
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 104, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton5)
+                .addGap(286, 286, 286))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -348,10 +374,10 @@ public class NhanVienForm extends javax.swing.JFrame {
                     .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton5)
-                .addGap(37, 37, 37))
+                .addGap(22, 22, 22))
         );
 
         jPanel4.setBackground(new java.awt.Color(102, 102, 102));
@@ -397,7 +423,7 @@ public class NhanVienForm extends javax.swing.JFrame {
         nvcongviec.setText("");
         nvdiachi.setText("");
         nvnamsinh.setText("");
-        nvgioitinh.setText("");
+        nvgioitinh.setSelectedIndex(0);
         nvhoten.setText("");
     }//GEN-LAST:event_nvclearActionPerformed
 
@@ -415,9 +441,12 @@ public class NhanVienForm extends javax.swing.JFrame {
     }//GEN-LAST:event_nvdeleteActionPerformed
 
     private void nvaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nvaddActionPerformed
+        if(!ValiForm()){
+            return;
+        }
         int manv = Integer.parseInt(txtMa.getText());
         String hoten = nvhoten.getText();
-        String gioitinh = nvgioitinh.getText();
+        String gioitinh = nvgioitinh.getSelectedItem().toString();
         int namsinh = Integer.parseInt(nvnamsinh.getText());
         String diachi = nvdiachi.getText();
         String congviec = nvcongviec.getText();
@@ -429,13 +458,15 @@ public class NhanVienForm extends javax.swing.JFrame {
     }//GEN-LAST:event_nvaddActionPerformed
 
     private void nvupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nvupdateActionPerformed
-
+        if(!ValiForm()){
+            return;
+        }
         NhanVien nv = new NhanVien();
         nv.setMa(Integer.parseInt(txtMa.getText()));
         nv.setHoTen(nvhoten.getText());
         nv.setNamSinh(Integer.parseInt(nvnamsinh.getText()));
         nv.setDiaChi(nvdiachi.getText());
-        nv.setGioiTinh(nvgioitinh.getText());
+        nv.setGioiTinh(nvgioitinh.getSelectedItem().toString());
         nv.setCongViec(nvcongviec.getText());
 
         JOptionPane.showMessageDialog(null, "Cap nhat thanh cong!");
@@ -450,7 +481,7 @@ public class NhanVienForm extends javax.swing.JFrame {
         txtMa.setEnabled(false);
         nvhoten.setText(tableModel.getValueAt(myIndex, 1).toString());
         nvnamsinh.setText(tableModel.getValueAt(myIndex, 2).toString());
-        nvgioitinh.setText(tableModel.getValueAt(myIndex, 3).toString());
+        nvgioitinh.setSelectedItem(tableModel.getValueAt(myIndex, 3).toString());
         nvdiachi.setText(tableModel.getValueAt(myIndex, 4).toString());
         nvcongviec.setText(tableModel.getValueAt(myIndex, 5).toString());
     }//GEN-LAST:event_nvlistMouseClicked
@@ -518,7 +549,7 @@ public class NhanVienForm extends javax.swing.JFrame {
     private javax.swing.JTextField nvcongviec;
     private javax.swing.JButton nvdelete;
     private javax.swing.JTextField nvdiachi;
-    private javax.swing.JTextField nvgioitinh;
+    private javax.swing.JComboBox<String> nvgioitinh;
     private javax.swing.JTextField nvhoten;
     private javax.swing.JTable nvlist;
     private javax.swing.JTextField nvnamsinh;

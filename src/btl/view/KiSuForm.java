@@ -28,7 +28,36 @@ public class KiSuForm extends javax.swing.JFrame {
         showKiSu();
     }
 
-    //sâu du lieu
+    public boolean ValiForm() {
+        if(Valication.isEmpty(txtMa, "Ma ki su khong duoc rong!")){
+            return false;                  
+        }
+        if(!Valication.isNumber(txtMa, "Ma ki su la kieu so!")){
+            return false;                  
+        }
+        if(Valication.isEmpty(txtTen, "Ten ki su khong duoc rong!")){
+            return false;                  
+        }
+        if(Valication.isEmpty(txtDiaChi, "Dia Chi khong duoc rong!")){
+            return false;                  
+        }
+        if(Valication.isEmpty(txtNamSinh, "Nam sinh khong duoc rong!")){
+            return false;                  
+        }if(!Valication.isNumber(txtNamSinh, "Nam sinh khong duoc rong!")){
+            return false;                  
+        }
+//        if(Valication.isEmpty(txtGioiTinh, "Gioi tinh khong duoc rong!")){
+//            return false;                  
+//        }
+         if(Valication.isEmpty(txtLoai, "Loai bang khong duoc rong!")){
+            return false;                  
+        }
+        if(Valication.isEmpty(txtLoai, "Nganh dao tao khong duoc rong!")){
+            return false;                  
+        }
+          return true; 
+    }
+    
     private void showKiSu() {
         KiSuList = KiSuModify.findAll();
         tableModel.setRowCount(0);
@@ -40,8 +69,8 @@ public class KiSuForm extends javax.swing.JFrame {
                 kisu.getNamSinh(),
                 kisu.getGioiTinh(),
                 kisu.getDiaChi(),
-                kisu.getLoaiBang(),
-                kisu.getNganhDT()
+                kisu.getNganhDT(),
+                kisu.getLoaiBang()
             });
         }
     }
@@ -74,7 +103,6 @@ public class KiSuForm extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         txtNamSinh = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        txtGioiTinh = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         txtDiaChi = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -85,6 +113,7 @@ public class KiSuForm extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         txtSearch = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
+        txtGioiTinh = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -252,6 +281,8 @@ public class KiSuForm extends javax.swing.JFrame {
             }
         });
 
+        txtGioiTinh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nu" }));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -305,12 +336,12 @@ public class KiSuForm extends javax.swing.JFrame {
                                 .addGap(47, 47, 47)
                                 .addComponent(btnDelete)
                                 .addGap(57, 57, 57)))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(BtnClear)
-                            .addComponent(txtGioiTinh, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDiaChi, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNganh, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtLoai, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtDiaChi, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                            .addComponent(txtNganh, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                            .addComponent(txtLoai, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                            .addComponent(txtGioiTinh, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 85, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -366,8 +397,8 @@ public class KiSuForm extends javax.swing.JFrame {
                     .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch))
                 .addGap(26, 26, 26)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton5)
                 .addGap(44, 44, 44)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -397,9 +428,13 @@ public class KiSuForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        if(!ValiForm()){
+            return;
+        }
+        
         int maks = Integer.parseInt(txtMa.getText());
         String hoten = txtTen.getText();
-        String gioitinh = txtGioiTinh.getText();
+        String gioitinh = txtGioiTinh.getSelectedItem().toString();
         int namsinh = Integer.parseInt(txtNamSinh.getText());
         String diachi = txtDiaChi.getText();
         String Nganhdt = txtNganh.getText();
@@ -415,19 +450,23 @@ public class KiSuForm extends javax.swing.JFrame {
         txtMa.setText("");
         txtTen.setText("");
         txtDiaChi.setText("");
-        txtGioiTinh.setText("");
+        txtGioiTinh.setSelectedIndex(0);
         txtNamSinh.setText("");
         txtNganh.setText("");
         txtLoai.setText("");
     }//GEN-LAST:event_BtnClearActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+       if(!ValiForm()){
+            return;
+        } 
+        
         KiSu ks = new KiSu();
         ks.setMa(Integer.parseInt(txtMa.getText()));
         ks.setHoTen(txtTen.getText());
         ks.setNamSinh(Integer.parseInt(txtNamSinh.getText()));
         ks.setDiaChi(txtDiaChi.getText());
-        ks.setGioiTinh(txtGioiTinh.getText());
+        ks.setGioiTinh(txtGioiTinh.getSelectedItem().toString());
         ks.setNganhDT(txtNganh.getText());
         ks.setLoaiBang(txtLoai.getText());
         KiSuModify.update(ks);
@@ -456,7 +495,7 @@ public class KiSuForm extends javax.swing.JFrame {
         txtMa.setEnabled(false);
         txtTen.setText(tableModel.getValueAt(myIndex, 1).toString());
         txtNamSinh.setText(tableModel.getValueAt(myIndex, 2).toString());
-        txtGioiTinh.setText(tableModel.getValueAt(myIndex, 3).toString());
+        txtGioiTinh.setSelectedItem(tableModel.getValueAt(myIndex, 3).toString());
         txtDiaChi.setText(tableModel.getValueAt(myIndex, 4).toString());
         txtNganh.setText(tableModel.getValueAt(myIndex, 5).toString());
         txtLoai.setText(tableModel.getValueAt(myIndex, 6).toString());
@@ -557,7 +596,7 @@ public class KiSuForm extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblList;
     private javax.swing.JTextField txtDiaChi;
-    private javax.swing.JTextField txtGioiTinh;
+    private javax.swing.JComboBox<String> txtGioiTinh;
     private javax.swing.JTextField txtLoai;
     private javax.swing.JTextField txtMa;
     private javax.swing.JTextField txtNamSinh;

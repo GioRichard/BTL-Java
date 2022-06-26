@@ -149,12 +149,12 @@
                                   <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="BtnClear" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtGioiTinh" alignment="0" min="-2" pref="156" max="-2" attributes="0"/>
-                              <Component id="txtDiaChi" alignment="0" min="-2" pref="156" max="-2" attributes="0"/>
-                              <Component id="txtNganh" alignment="0" min="-2" pref="156" max="-2" attributes="0"/>
-                              <Component id="txtLoai" alignment="0" min="-2" pref="156" max="-2" attributes="0"/>
+                              <Component id="txtDiaChi" alignment="0" pref="156" max="32767" attributes="0"/>
+                              <Component id="txtNganh" alignment="0" pref="156" max="32767" attributes="0"/>
+                              <Component id="txtLoai" alignment="0" pref="156" max="32767" attributes="0"/>
+                              <Component id="txtGioiTinh" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="85" max="32767" attributes="0"/>
                       </Group>
@@ -228,8 +228,8 @@
                       <Component id="btnSearch" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="169" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="203" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButton5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
@@ -390,8 +390,6 @@
             <Property name="text" type="java.lang.String" value="GI&#x1eda;I T&#xcd;NH"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtGioiTinh">
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -538,6 +536,19 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="txtGioiTinh">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="Nam"/>
+                <StringItem index="1" value="Nu"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
