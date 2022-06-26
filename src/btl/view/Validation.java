@@ -12,7 +12,7 @@ import javax.swing.JTextField;
  *
  * @author adli789987
  */
-class Valication {
+class Validation {
         public static boolean isEmpty(JTextField txtField, String mgs){
         String txtValue = txtField.getText().trim();
         if(txtValue.length() == 0){
@@ -24,6 +24,21 @@ class Valication {
             txtField.setBackground(Color.white);
             return false;
         }
+      
+
+        public static boolean isTextName(JTextField txtField, String mgs){
+        String txtValue = txtField.getText().trim();
+        String str ="^([a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđ]+)((\\s{1}[a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđ]+){1,})$";
+        
+        if(txtValue.matches(str)){
+            txtField.requestFocus();
+            return true;          
+        }
+        JOptionPane.showMessageDialog(null, mgs);
+            txtField.setBackground(Color.white);
+            return false;
+        }
+      
             
         public static boolean isNumber(JTextField txtField, String mgs){
         String txtValue = txtField.getText().trim();
@@ -37,5 +52,4 @@ class Valication {
             txtField.setBackground(Color.white);
             return true;
         }
-        
 }

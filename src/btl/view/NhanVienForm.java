@@ -33,27 +33,31 @@ public class NhanVienForm extends javax.swing.JFrame {
     }
 
     public boolean ValiForm() {
-        if(Valication.isEmpty(txtMa, "Ma nhan vien khong duoc rong!")){
+        if(Validation.isEmpty(txtMa, "Ma nhan vien khong duoc rong!")){
             return false;                  
         }
-        if(!Valication.isNumber(txtMa, "Ma nhan vien la kieu so!")){
+        if(!Validation.isNumber(txtMa, "Ma nhan vien la kieu so!")){
             return false;                  
         }
-        if(Valication.isEmpty(nvhoten, "Ten nhan vien khong duoc rong!")){
+        if(Validation.isEmpty(nvhoten, "Ten nhan vien khong duoc rong!")){
             return false;                  
         }
-        if(Valication.isEmpty(nvdiachi, "Dia Chi khong duoc rong!")){
+        if(!Validation.isTextName(nvhoten, "Ten nhan vien khong dung dinh dang")){
             return false;                  
         }
-        if(Valication.isEmpty(nvnamsinh, "Nam sinh khong duoc rong!")){
+        
+        if(Validation.isEmpty(nvdiachi, "Dia Chi khong duoc rong!")){
             return false;                  
-        }if(!Valication.isNumber(nvnamsinh, "Nam sinh khong duoc rong!")){
+        }
+        if(Validation.isEmpty(nvnamsinh, "Nam sinh khong duoc rong!")){
+            return false;                  
+        }if(!Validation.isNumber(nvnamsinh, "Nam sinh khong duoc rong!")){
             return false;                  
         }
 //        if(Valication.isEmpty(nvgioitinh, "Gioi tinh khong duoc rong!")){
 //            return false;                  
 //        }
-        if(Valication.isEmpty(nvcongviec, "Cong viec khong duoc rong!")){
+        if(Validation.isEmpty(nvcongviec, "Cong viec khong duoc rong!")){
             return false;                  
         }
           return true; 
@@ -149,8 +153,9 @@ public class NhanVienForm extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setText("CÔNG VIỆC");
 
-        nvupdate.setBackground(new java.awt.Color(153, 153, 153));
+        nvupdate.setBackground(new java.awt.Color(51, 51, 51));
         nvupdate.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        nvupdate.setForeground(new java.awt.Color(255, 255, 255));
         nvupdate.setText("SỬA");
         nvupdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,8 +163,9 @@ public class NhanVienForm extends javax.swing.JFrame {
             }
         });
 
-        nvdelete.setBackground(new java.awt.Color(153, 153, 153));
+        nvdelete.setBackground(new java.awt.Color(51, 51, 51));
         nvdelete.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        nvdelete.setForeground(new java.awt.Color(255, 255, 255));
         nvdelete.setText("XÓA");
         nvdelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,8 +173,9 @@ public class NhanVienForm extends javax.swing.JFrame {
             }
         });
 
-        nvadd.setBackground(new java.awt.Color(153, 153, 153));
+        nvadd.setBackground(new java.awt.Color(51, 51, 51));
         nvadd.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        nvadd.setForeground(new java.awt.Color(255, 255, 255));
         nvadd.setText("THÊM MỚI");
         nvadd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,8 +183,9 @@ public class NhanVienForm extends javax.swing.JFrame {
             }
         });
 
-        nvclear.setBackground(new java.awt.Color(153, 153, 153));
+        nvclear.setBackground(new java.awt.Color(51, 51, 51));
         nvclear.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        nvclear.setForeground(new java.awt.Color(255, 255, 255));
         nvclear.setText("LÀM MỚI");
         nvclear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -191,6 +199,7 @@ public class NhanVienForm extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("DANH SÁCH NHÂN VIÊN");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -245,8 +254,9 @@ public class NhanVienForm extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(nvlist);
 
-        jButton5.setBackground(new java.awt.Color(153, 153, 153));
+        jButton5.setBackground(new java.awt.Color(51, 51, 51));
         jButton5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("TRANG CHỦ");
         jButton5.setActionCommand("");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -255,8 +265,9 @@ public class NhanVienForm extends javax.swing.JFrame {
             }
         });
 
-        btnSearch.setBackground(new java.awt.Color(153, 153, 153));
+        btnSearch.setBackground(new java.awt.Color(51, 51, 51));
         btnSearch.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("TÌM KIẾM");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -423,7 +434,7 @@ public class NhanVienForm extends javax.swing.JFrame {
         nvcongviec.setText("");
         nvdiachi.setText("");
         nvnamsinh.setText("");
-        nvgioitinh.setSelectedIndex(0);
+        nvgioitinh.setSelectedIndex(-1);
         nvhoten.setText("");
     }//GEN-LAST:event_nvclearActionPerformed
 

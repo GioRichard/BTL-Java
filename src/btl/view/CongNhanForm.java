@@ -32,35 +32,34 @@ public class CongNhanForm extends javax.swing.JFrame {
     }
     
     public boolean ValiForm() {
-        if(Valication.isEmpty(txtMa, "Ma cong nhan khong duoc rong!")){
+        if(Validation.isEmpty(txtMa, "Ma cong nhan khong duoc rong!")){
             return false;                  
-        }if(!Valication.isNumber(txtMa, "Ma nhan vien la kieu so!")){
-            return false;                  
-        }
-        
-        if(Valication.isEmpty(txtTen, "Ten cong nhan khong duoc rong!")){
+        }if(!Validation.isNumber(txtMa, "Ma nhan vien la kieu so!")){
             return false;                  
         }
         
-        if(Valication.isEmpty(txtDiaChi, "Dia Chi khong duoc rong!")){
+        if(Validation.isEmpty(txtTen, "Ten cong nhan khong duoc rong!")){
+            return false;                  
+        }
+        if(!Validation.isTextName(txtTen, "Ten cong nhan khong dung dinh dang!")){
+            return false;                  
+        }
+        if(Validation.isEmpty(txtDiaChi, "Dia Chi khong duoc rong!")){
             return false;                  
         }
         
-        if(Valication.isEmpty(txtNamSinh, "Nam sinh khong duoc rong!")){
+        if(Validation.isEmpty(txtNamSinh, "Nam sinh khong duoc rong!")){
             return false;                  
         }
-        if(!Valication.isNumber(txtNamSinh, "Nam sinh la kieu so!")){
+        if(!Validation.isNumber(txtNamSinh, "Nam sinh la kieu so!")){
             return false;                  
         }
         
-//        if(Valication.isEmpty(txtGioiTinh, "Gioi tinh khong duoc rong!")){
-//            return false;                  
-//        }
         
-        if(Valication.isEmpty(txtBac, "Bac khong duoc rong!")){
+        if(Validation.isEmpty(txtBac, "Bac khong duoc rong!")){
             return false;                  
         }
-        if(!Valication.isNumber(txtBac, "Bac la kieu so!")){
+        if(!Validation.isNumber(txtBac, "Bac la kieu so!")){
             return false;                  
         }
           return true; 
@@ -151,7 +150,8 @@ public class CongNhanForm extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setText("BẬC");
 
-        btnUpdate.setBackground(new java.awt.Color(153, 153, 153));
+        btnUpdate.setBackground(new java.awt.Color(51, 51, 51));
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("SỬA");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,7 +159,8 @@ public class CongNhanForm extends javax.swing.JFrame {
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(153, 153, 153));
+        btnDelete.setBackground(new java.awt.Color(51, 51, 51));
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("XÓA");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,7 +168,8 @@ public class CongNhanForm extends javax.swing.JFrame {
             }
         });
 
-        btnAdd.setBackground(new java.awt.Color(153, 153, 153));
+        btnAdd.setBackground(new java.awt.Color(51, 51, 51));
+        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
         btnAdd.setText("THÊM MỚI");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,7 +177,8 @@ public class CongNhanForm extends javax.swing.JFrame {
             }
         });
 
-        btnClear.setBackground(new java.awt.Color(153, 153, 153));
+        btnClear.setBackground(new java.awt.Color(51, 51, 51));
+        btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setText("LÀM MỚI");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -243,7 +246,8 @@ public class CongNhanForm extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel10.setText("ĐỊA CHỈ");
 
-        btnSeach.setBackground(new java.awt.Color(153, 153, 153));
+        btnSeach.setBackground(new java.awt.Color(51, 51, 51));
+        btnSeach.setForeground(new java.awt.Color(255, 255, 255));
         btnSeach.setText("TÌM KIẾM");
         btnSeach.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -375,8 +379,9 @@ public class CongNhanForm extends javax.swing.JFrame {
             .addGap(0, 17, Short.MAX_VALUE)
         );
 
-        jButton5.setBackground(new java.awt.Color(153, 153, 153));
+        jButton5.setBackground(new java.awt.Color(51, 51, 51));
         jButton5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("TRANG CHỦ");
         jButton5.setActionCommand("");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -430,8 +435,9 @@ public class CongNhanForm extends javax.swing.JFrame {
 
         CongNhan cn = new CongNhan(bac, macn, hoten, namsinh, gioitinh, diachi);
         CongNhanModify.insert(cn);
-        showcn();
+        
         JOptionPane.showMessageDialog(this, "Thêm thành công!");
+        showcn();
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed

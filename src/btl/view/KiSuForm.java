@@ -29,30 +29,33 @@ public class KiSuForm extends javax.swing.JFrame {
     }
 
     public boolean ValiForm() {
-        if(Valication.isEmpty(txtMa, "Ma ki su khong duoc rong!")){
+        if(Validation.isEmpty(txtMa, "Ma ki su khong duoc rong!")){
             return false;                  
         }
-        if(!Valication.isNumber(txtMa, "Ma ki su la kieu so!")){
+        if(!Validation.isNumber(txtMa, "Ma ki su la kieu so!")){
             return false;                  
         }
-        if(Valication.isEmpty(txtTen, "Ten ki su khong duoc rong!")){
+        if(Validation.isEmpty(txtTen, "Ten ki su khong duoc rong!")){
             return false;                  
         }
-        if(Valication.isEmpty(txtDiaChi, "Dia Chi khong duoc rong!")){
+        if(!Validation.isTextName(txtTen, "Ten ki su khong dung dinh dang!")){
             return false;                  
         }
-        if(Valication.isEmpty(txtNamSinh, "Nam sinh khong duoc rong!")){
+        if(Validation.isEmpty(txtDiaChi, "Dia Chi khong duoc rong!")){
             return false;                  
-        }if(!Valication.isNumber(txtNamSinh, "Nam sinh khong duoc rong!")){
+        }
+        if(Validation.isEmpty(txtNamSinh, "Nam sinh khong duoc rong!")){
+            return false;                  
+        }if(!Validation.isNumber(txtNamSinh, "Nam sinh khong duoc rong!")){
             return false;                  
         }
 //        if(Valication.isEmpty(txtGioiTinh, "Gioi tinh khong duoc rong!")){
 //            return false;                  
 //        }
-         if(Valication.isEmpty(txtLoai, "Loai bang khong duoc rong!")){
+         if(Validation.isEmpty(txtLoai, "Loai bang khong duoc rong!")){
             return false;                  
         }
-        if(Valication.isEmpty(txtLoai, "Nganh dao tao khong duoc rong!")){
+        if(Validation.isEmpty(txtLoai, "Nganh dao tao khong duoc rong!")){
             return false;                  
         }
           return true; 
@@ -150,8 +153,9 @@ public class KiSuForm extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setText("NGÀNH DT");
 
-        btnUpdate.setBackground(new java.awt.Color(153, 153, 153));
+        btnUpdate.setBackground(new java.awt.Color(51, 51, 51));
         btnUpdate.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("SỬA");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,8 +163,9 @@ public class KiSuForm extends javax.swing.JFrame {
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(153, 153, 153));
+        btnDelete.setBackground(new java.awt.Color(51, 51, 51));
         btnDelete.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("XÓA");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,8 +173,9 @@ public class KiSuForm extends javax.swing.JFrame {
             }
         });
 
-        btnAdd.setBackground(new java.awt.Color(153, 153, 153));
+        btnAdd.setBackground(new java.awt.Color(51, 51, 51));
         btnAdd.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
         btnAdd.setText("THÊM MỚI");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,8 +183,9 @@ public class KiSuForm extends javax.swing.JFrame {
             }
         });
 
-        BtnClear.setBackground(new java.awt.Color(153, 153, 153));
+        BtnClear.setBackground(new java.awt.Color(51, 51, 51));
         BtnClear.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        BtnClear.setForeground(new java.awt.Color(255, 255, 255));
         BtnClear.setText("LÀM MỚI");
         BtnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -249,8 +256,9 @@ public class KiSuForm extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblList);
 
-        jButton5.setBackground(new java.awt.Color(153, 153, 153));
+        jButton5.setBackground(new java.awt.Color(51, 51, 51));
         jButton5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("TRANG CHỦ");
         jButton5.setActionCommand("");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -272,8 +280,9 @@ public class KiSuForm extends javax.swing.JFrame {
             .addGap(0, 17, Short.MAX_VALUE)
         );
 
-        btnSearch.setBackground(new java.awt.Color(153, 153, 153));
+        btnSearch.setBackground(new java.awt.Color(51, 51, 51));
         btnSearch.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("TÌM KIẾM");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -405,6 +414,8 @@ public class KiSuForm extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jLabel6.getAccessibleContext().setAccessibleName("THÔNG TIN KĨ SƯ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -462,6 +473,7 @@ public class KiSuForm extends javax.swing.JFrame {
         } 
         
         KiSu ks = new KiSu();
+       
         ks.setMa(Integer.parseInt(txtMa.getText()));
         ks.setHoTen(txtTen.getText());
         ks.setNamSinh(Integer.parseInt(txtNamSinh.getText()));
